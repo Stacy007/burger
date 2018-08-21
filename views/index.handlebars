@@ -1,0 +1,39 @@
+<h1>Eat-Da-Burger!</h1>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+      <p>{{burger_name}}</p>
+      <p>devour? {{devoured}}</p>
+    </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+		{{!-- <li> --}}
+			{{!-- {{burgers}} --}}
+
+			<button class="devour-burger" data-id="{{id}}" data-burger-devoured="{{devour}}">
+				{{#if devoured}}devour!{{else}}Eat it!{{/if}}
+			</button>
+		{{!-- </li> --}}
+
+<h2>Burgers that are devoured</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+    <li>
+      <p>{{burger_name}}</p>
+      {{!-- <p>devoured: {{devoured}}</p> --}}
+    </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<form class="create-form">
+    <input class="form-control" type="text" placeholder="Default input">
+    <button type="submit">Submit</button>
+
+  <h5>Enter a burger you want to eat. Click the "Submit" button.</h5>
+</form> 
